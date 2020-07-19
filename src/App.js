@@ -4,14 +4,6 @@ import { Switch, Route } from "react-router-dom";
 import Homepage from "./pages/Homepage/Homepage";
 import Shop from "./pages/Shop/Shop";
 
-const HatPage = () => {
-  return (
-    <div>
-      <h2>HAT PAGE</h2>
-    </div>
-  );
-};
-
 function App() {
   return (
     <div>
