@@ -19,7 +19,7 @@ To view the app, visit:
 6. Stripe API
 
 ---
-[rrg-clothing](https://i.imgur.com/z0pIgxg.png)
+![rrg](https://i.imgur.com/z0pIgxg.png)
 
 ## Work In Progress
 
