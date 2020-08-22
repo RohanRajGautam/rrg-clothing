@@ -1,4 +1,4 @@
-# RRG Clothing
+# RRG Clothing :fire:
 
 Full Stack E-Commerce App built with React, using Firebase and Stripe API, deployed with Heroku
 
@@ -17,6 +17,9 @@ To view the app, visit:
 4. Node.js (Back-end)
 5. Firebase (Database)
 6. Stripe API
+
+---
+![rrg](https://i.imgur.com/z0pIgxg.png)
 
 ## Work In Progress
 
