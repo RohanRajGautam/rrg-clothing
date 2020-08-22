@@ -1,19 +1,22 @@
-import React from "react";
-import { connect } from "react-redux";
+import React from 'react';
+import { connect } from 'react-redux';
 
-import { selectCartItemsCount } from "../../redux/cart/cart-selector";
-import { createStructuredSelector } from "reselect";
+import { selectCartItemsCount } from '../../redux/cart/cart-selector';
+import { createStructuredSelector } from 'reselect';
+import { toggleCartHidden } from '../../redux/cart/cart.action';
 
-import { ReactComponent as ShoppingIcon } from "../../assets/shoppingIcon.svg";
-import { toggleCartHidden } from "../../redux/cart/cart.action";
-import "./CartIcon.scss";
+import {
+  CartIconContainer,
+  ItemCountContainer,
+  ShoppingIcon,
+} from './cart-icon.styles';
 
 const CartIcon = ({ toggleCartHidden, itemCount }) => {
   return (
-    <div className='cart-icon'>
-      <ShoppingIcon className='shopping-icon' onClick={toggleCartHidden} />
-      <span className='item-count'>{itemCount}</span>
-    </div>
+    <CartIconContainer>
+      <ShoppingIcon onClick={toggleCartHidden} />
+      <ItemCountContainer>{itemCount}</ItemCountContainer>
+    </CartIconContainer>
   );
 };
 

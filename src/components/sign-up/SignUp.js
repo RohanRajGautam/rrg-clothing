@@ -1,19 +1,19 @@
-import React from "react";
-import FormInput from "../form-input/FormInput";
-import CustomButton from "../custom-button/CustomButton";
+import React from 'react';
+import FormInput from '../form-input/FormInput';
+import CustomButton from '../custom-button/CustomButton';
 
-import { auth, createUserProfileDocument } from "../../firebase/firebase";
-import "./SignUp.scss";
+import { auth, createUserProfileDocument } from '../../firebase/firebase';
+import { SignUpContainer, TitleContainer } from './sign-up-styles';
 
 class SignUp extends React.Component {
   constructor() {
     super();
 
     this.state = {
-      displayName: "",
-      email: "",
-      password: "",
-      confirmPassword: "",
+      displayName: '',
+      email: '',
+      password: '',
+      confirmPassword: '',
     };
   }
 
@@ -23,7 +23,7 @@ class SignUp extends React.Component {
     const { displayName, email, password, confirmPassword } = this.state;
 
     if (password !== confirmPassword) {
-      alert("password does not match");
+      alert('password does not match');
       return;
     }
 
@@ -36,10 +36,10 @@ class SignUp extends React.Component {
       await createUserProfileDocument(user, { displayName });
 
       this.setState = {
-        displayName: "",
-        email: "",
-        password: "",
-        confirmPassword: "",
+        displayName: '',
+        email: '',
+        password: '',
+        confirmPassword: '',
       };
     } catch (error) {
       console.error(error);
@@ -55,10 +55,10 @@ class SignUp extends React.Component {
   render() {
     const { displayName, email, password, confirmPassword } = this.state;
     return (
-      <div className='sign-up'>
-        <h2 className='title'>I do not have a account.</h2>
+      <SignUpContainer>
+        <TitleContainer>I do not have a account.</TitleContainer>
         <span>Sign up with your email and password</span>
-        <form className='sign-up-form' onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit}>
           <FormInput
             type='text'
             name='displayName'
@@ -93,7 +93,7 @@ class SignUp extends React.Component {
           />
           <CustomButton type='submit'>SIGN UP</CustomButton>
         </form>
-      </div>
+      </SignUpContainer>
     );
   }
 }

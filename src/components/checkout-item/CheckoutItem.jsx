@@ -1,32 +1,35 @@
-import React from "react";
-import { connect } from "react-redux";
-import "./CheckoutItem.scss";
+import React from 'react';
+import { connect } from 'react-redux';
 
-import { clearItem, removeItem, addItem } from "../../redux/cart/cart.action";
+import {
+  CheckoutItemContainer,
+  ImageContainer,
+  TextContainer,
+  QuantityContainer,
+  RemoveButtonContainer,
+} from './checkout-item.styles';
+
+import { clearItem, removeItem, addItem } from '../../redux/cart/cart.action';
 
 const CheckoutItem = ({ cartItem, removeItem, addItem, clearItem }) => {
   const { name, price, imageUrl, quantity } = cartItem;
 
   return (
-    <div className='checkout-item'>
-      <div className='image-container'>
+    <CheckoutItemContainer>
+      <ImageContainer>
         <img src={imageUrl} alt='item' />
-      </div>
-      <span className='name'>{name}</span>
-      <span className='price'>${price}</span>
-      <span className='quantity'>
-        <div className='arrow' onClick={() => removeItem(cartItem)}>
-          &#10094;
-        </div>
-        <span className='value'>{quantity}</span>
-        <div className='arrow' onClick={() => addItem(cartItem)}>
-          &#10095;
-        </div>
-      </span>
-      <div className='remove-button' onClick={() => clearItem(cartItem)}>
+      </ImageContainer>
+      <TextContainer>{name}</TextContainer>
+      <TextContainer>${price}</TextContainer>
+      <QuantityContainer>
+        <div onClick={() => removeItem(cartItem)}>&#10094;</div>
+        <span>{quantity}</span>
+        <div onClick={() => addItem(cartItem)}>&#10095;</div>
+      </QuantityContainer>
+      <RemoveButtonContainer onClick={() => clearItem(cartItem)}>
         &#10005;
-      </div>
-    </div>
+      </RemoveButtonContainer>
+    </CheckoutItemContainer>
   );
 };
 
