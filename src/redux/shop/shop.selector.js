@@ -9,11 +9,11 @@ export const selectShopCollections = createSelector(
 
 export const selectCollectionToPreview = createSelector(
   [selectShopCollections],
-  (collections) => Object.keys(collections).map((key) => collections[key])
+  (collections) =>
+    collections ? Object.keys(collections).map((key) => collections[key]) : []
 );
 
 export const selectCollection = (collectionUrlPath) =>
-  createSelector(
-    [selectShopCollections],
-    (collections) => collections[collectionUrlPath]
+  createSelector([selectShopCollections], (collections) =>
+    collections ? collections[collectionUrlPath] : null
   );
