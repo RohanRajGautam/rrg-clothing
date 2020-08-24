@@ -60,6 +60,28 @@ export const addCollectionAndDocuments = async (
 
 // =====================================
 
+// for converting out collections snapshot into map
+
+export const convertCollectionsSnapshotToMap = (collections) => {
+  const transformedCollections = collections.docs.map((docSnapshot) => {
+    const { title, items } = docSnapshot.data();
+
+    return {
+      routeName: encodeURI(title.toLowerCase()),
+      id: docSnapshot.id,
+      title,
+      items,
+    };
+  });
+
+  return transformedCollections.reduce((accumulator, collections) => {
+    accumulator[collections.title.toLowerCase()] = collections;
+    return accumulator;
+  }, {});
+};
+
+// ======================
+
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 
