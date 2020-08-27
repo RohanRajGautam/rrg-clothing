@@ -5,12 +5,12 @@ import { connect } from 'react-redux';
 import CollectionsOverviewContainer from '../../components/collection-overview/collection-overview.container';
 import CollectionContainer from '../Collections/collection.container';
 
-import { fetchCollectionAsync } from '../../redux/shop/shop.action';
+import { fetchCollection } from '../../redux/shop/shop.action';
 
-const Shop = ({ fetchCollectionAsync, match }) => {
+const Shop = ({ fetchCollection, match }) => {
   useEffect(() => {
-    fetchCollectionAsync();
-  }, [fetchCollectionAsync]);
+    fetchCollection();
+  }, [fetchCollection]);
 
   return (
     <div className='shop-page'>
@@ -28,7 +28,7 @@ const Shop = ({ fetchCollectionAsync, match }) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchCollectionAsync: () => dispatch(fetchCollectionAsync()),
+  fetchCollection: () => dispatch(fetchCollection()),
 });
 
 export default connect(null, mapDispatchToProps)(Shop);
