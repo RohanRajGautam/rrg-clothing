@@ -21,6 +21,20 @@ To view the app, visit:
 ---
 ![rrg](https://i.imgur.com/z0pIgxg.png)
 
+---
+![rrg](https://i.imgur.com/yZiNwHc.png)
+
+---
+![rrg](https://i.imgur.com/obaVfWc.png)
+
+---
+![rrg](https://i.imgur.com/qEuYU54.png)
+
+---
+![rrg](https://i.imgur.com/zPLZ6zb.png)
+
+
+
 ## Work In Progress
 
 The app is being updated weekly, as more work needs to be done.
