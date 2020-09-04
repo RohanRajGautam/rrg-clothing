@@ -11,7 +11,7 @@ export const CollectionItemContainer = styled.div`
   position: relative;
 
   &:hover {
-    image {
+    .image {
       opacity: 0.8;
     }
 
@@ -19,6 +19,21 @@ export const CollectionItemContainer = styled.div`
       opacity: 0.85;
       display: flex;
     }
+  }
+
+  @media screen and (max-width: 800px) {
+    width: 40vw;
+
+    &:hover {
+      .image {
+        opacity: unset;
+      }
+
+      button {
+        opacity: unset;
+      }
+    }
+  }
 `;
 
 export const AddButton = styled(CustomButton)`
@@ -27,6 +42,13 @@ export const AddButton = styled(CustomButton)`
   position: absolute;
   top: 255px;
   display: none;
+
+  @media screen and (max-width: 800px) {
+    display: block;
+    opacity: 0.8;
+    min-width: unset;
+    padding: 0 10px;
+  }
 `;
 
 export const ImageContainer = styled.div`
@@ -55,4 +77,8 @@ export const PriceContainer = styled.span`
   width: 10%;
   text-align: right;
   padding-right: 5px;
+
+  @media screen and (max-width: 800px) {
+    margin -right: 5px;
+  }
 `;
